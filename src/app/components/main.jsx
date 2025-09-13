@@ -49,6 +49,7 @@ export default function Main() {
 
       {/* Down Arrow */}
       <div className="flex items-center flex-col flex-1 justify-center pt-15">
+       
         <div
           className="p-2 bg-white/40 backdrop-blur-xs border rounded-full animate-bounce shadow-md cursor-pointer"
           onClick={scrollToStory} // music plays here too
