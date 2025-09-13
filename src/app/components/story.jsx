@@ -5,6 +5,7 @@ import { useEffect, useRef } from 'react';
 import { gsap } from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import { motion } from "framer-motion";
+import Music from './music';
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -67,6 +68,9 @@ export default function Story() {
         </div>
       </div>
 
+    <div>
+      <Music/>
+    </div>
 
       <div className="flex justify-center max-w-screen gap-4 p-4">
         <motion.img
