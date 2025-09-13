@@ -1,8 +1,13 @@
 import { Geist, Geist_Mono, Lato, Playfair_Display,Libre_Baskerville  } from "next/font/google";
-import { Great_Vibes, Dancing_Script, Parisienne, Montserrat, EB_Garamond } from "next/font/google";
+import { Great_Vibes, Dancing_Script, Parisienne, Montserrat, EB_Garamond, Style_Script} from "next/font/google";
 import "./globals.css";
 
-// Sans + Mono
+const styleScript = Style_Script({
+  variable: '--font-style-script',
+  subsets: ['latin'],
+  weight: '400', // you can adjust weight if needed
+});
+
 const geistSans = Geist({
   variable: "--font-geist-sans",
   subsets: ["latin"],
@@ -67,7 +72,7 @@ export default function RootLayout({ children }) {
   return (
     <html lang="en">
       <body
-        className={`${geistSans.variable} ${geistMono.variable} ${montserrat.variable} ${playfair.variable} ${greatVibes.variable} ${dancing.variable} ${parisienne.variable} ${lato.variable} ${libreBaskerville.variable} antialiased`}
+        className={`${styleScript.variable} ${geistSans.variable}  ${geistMono.variable} ${montserrat.variable} ${playfair.variable} ${greatVibes.variable} ${dancing.variable} ${parisienne.variable} ${lato.variable} ${libreBaskerville.variable} antialiased`}
       >
         {children}
       </body>

@@ -1,4 +1,4 @@
-'use client';
+'use client'
 import { Camera, Mesh, Plane, Program, Renderer, Texture, Transform } from 'ogl';
 import { useEffect, useRef } from 'react';
 
@@ -269,11 +269,11 @@ class Media {
         this.plane.program.uniforms.uViewportSizes.value = [this.viewport.width, this.viewport.height];
       }
     }
-    this.scale = this.screen.height / 2500;
+    this.scale = this.screen.height / 1500;
     this.plane.scale.y = (this.viewport.height * (900 * this.scale)) / this.screen.height;
     this.plane.scale.x = (this.viewport.width * (700 * this.scale)) / this.screen.width;
     this.plane.program.uniforms.uPlaneSizes.value = [this.plane.scale.x, this.plane.scale.y];
-    this.padding = 1;
+    this.padding = 2;
     this.width = this.plane.scale.x + this.padding;
     this.widthTotal = this.width * this.length;
     this.x = this.width * this.index;
@@ -333,18 +333,21 @@ class App {
   }
   createMedias(items, bend = 1, textColor, borderRadius, font) {
     const defaultItems = [
-      { image: `https://picsum.photos/seed/1/800/600?grayscale`, text: 'Bridge' },
-      { image: `https://picsum.photos/seed/2/800/600?grayscale`, text: 'Desk Setup' },
-      { image: `https://picsum.photos/seed/3/800/600?grayscale`, text: 'Waterfall' },
-      { image: `https://picsum.photos/seed/4/800/600?grayscale`, text: 'Strawberries' },
-      { image: `https://picsum.photos/seed/5/800/600?grayscale`, text: 'Deep Diving' },
-      { image: `https://picsum.photos/seed/16/800/600?grayscale`, text: 'Train Track' },
-      { image: `https://picsum.photos/seed/17/800/600?grayscale`, text: 'Santorini' },
-      { image: `https://picsum.photos/seed/8/800/600?grayscale`, text: 'Blurry Lights' },
-      { image: `https://picsum.photos/seed/9/800/600?grayscale`, text: 'New York' },
-      { image: `https://picsum.photos/seed/10/800/600?grayscale`, text: 'Good Boy' },
-      { image: `https://picsum.photos/seed/21/800/600?grayscale`, text: 'Coastline' },
-      { image: `https://picsum.photos/seed/12/800/600?grayscale`, text: 'Palm Trees' }
+      { image: `/11.jfif`, text: 'La Union' },
+      { image: `/12.jfif`, text: 'La Union' },
+      { image: `/13.jfif`, text: 'Hongkong' },
+      { image: `/14.jfif`, text: 'Azure' },
+      { image: `/15.jfif`, text: 'Macao' },
+      { image: `/16.jfif`, text: 'Hongkong' },
+      { image: `/17.jfif`, text: 'Macao' },
+      { image: `/18.jfif`, text: 'Hongkong' },
+      { image: `/19.jfif`, text: 'Benguet' },
+      { image: `/20.jfif`, text: 'Baguio' },
+      { image: `/21.jfif`, text: 'Cebu' },
+      { image: `/22.jfif`, text: 'Laguna' },
+      { image: `/23.jfif`, text: 'Boracay' },
+      { image: `/24.jfif`, text: 'Laguna' },
+      { image: `/25.jfif`, text: 'Laguna' },
     ];
     const galleryItems = items && items.length ? items : defaultItems;
     this.mediasImages = galleryItems.concat(galleryItems);
@@ -470,5 +473,5 @@ export default function CircularGallery({
       app.destroy();
     };
   }, [items, bend, textColor, borderRadius, font, scrollSpeed, scrollEase]);
-  return <div className="w-full h-full overflow-hidden cursor-grab active:cursor-grabbing" ref={containerRef} />;
+  return <div className="w-full  h-[400px] md:h-full overflow-hidden cursor-grab active:cursor-grabbing" ref={containerRef} />;
 }

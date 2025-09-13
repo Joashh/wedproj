@@ -12,6 +12,7 @@
   --font-dancing: cursive;
   --font-parisienne: cursive;
   --font-lato: sans-serif;
+  --font-style: cursive;
    --font-playfair: serif;
      --font-eb-garamond: serif;
     --font-libre-baskerville: serif;
@@ -122,6 +123,9 @@ body {
 .font-dancing {
   font-family: var(--font-dancing);
 }
+.font-style {
+  font-family: var(--font-style-script);
+}
 
 .font-parisienne {
   font-family: var(--font-parisienne);
@@ -130,6 +134,9 @@ body {
 .font-lato {
   font-family: var(--font-lato), sans-serif;
 }
+
+
+
 
 .dark {
   --background: oklch(0.145 0 0);

@@ -15,9 +15,9 @@ export default function Home() {
         <Main/>
         <Story/>
         <Photos/>
-        <WedDetails/>
         <Venue/>
         <Entourage/>
+        <WedDetails/>
         <Invitation/>
         <RSVPform/>
     </div>

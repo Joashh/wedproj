@@ -1,7 +1,7 @@
 export default function Entourage() {
   return (
     <div className="w-screen min-h-screen p-6 flex flex-col items-center">
-      <h1 className="font-garamond text-2xl font-bold text-gray-700 mb-6 text-center">
+      <h1 className="font-dancing  text-4xl font-bold text-gray-700 mb-6 text-center">
         Wedding Entourage
       </h1>
 
@@ -29,7 +29,7 @@ export default function Entourage() {
           <h2 className="text-lg font-garamond font-semibold text-gray-600 mb-2 text-center">
             Principal Sponsors
           </h2>
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-y-1 text-center">
+          <div className="grid grid-cols-2  gap-y-1 text-center">
             {[
               "Mr. Steven Aquino",
               "Mrs. Maura Tacderas",
@@ -48,7 +48,7 @@ export default function Entourage() {
               "Mr. Marlon Mercado",
               "Mrs. Liezel Solinap",
             ].map((sponsor, i) => (
-              <p key={i} className="text-gray-700">{sponsor}</p>
+              <p key={i} className="text-gray-700 text-sm md:text-base">{sponsor}</p>
             ))}
           </div>
         </div>
@@ -66,8 +66,8 @@ export default function Entourage() {
           <p className="text-gray-700">Ann Gelyn Raymundo</p>
         </div>
 
-        {/* Groomsmen */}
-        <div className="text-center">
+        <div className="grid grid-cols-2  gap-y-1 text-center py-2">
+           <div className="text-center">
           <h2 className="text-lg font-garamond font-semibold text-gray-600 mb-2">
             Groomsmen
           </h2>
@@ -79,7 +79,7 @@ export default function Entourage() {
               "Christian Panotes",
               "Marjean Samonte",
             ].map((groom, i) => (
-              <p key={i} className="text-gray-700">{groom}</p>
+              <p key={i} className="text-gray-700 text-sm md:text-base">{groom}</p>
             ))}
           </div>
         </div>
@@ -97,10 +97,12 @@ export default function Entourage() {
               "Sen Austria",
               "Jessuine Marie Austria",
             ].map((bride, i) => (
-              <p key={i} className="text-gray-700">{bride}</p>
+              <p key={i} className="text-gray-700 text-sm md:text-base">{bride}</p>
             ))}
           </div>
         </div>
+        </div>
+       
 
         {/* Secondary Sponsors */}
         <div>

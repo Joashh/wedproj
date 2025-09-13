@@ -2,7 +2,7 @@
 import { Swiper, SwiperSlide } from 'swiper/react';
 import 'swiper/css';
 import { useRef } from 'react';
-
+import { motion } from "framer-motion";
 export default function Venue() {
   const enableMap = (iframeRef, buttonRef) => {
     if (iframeRef.current && buttonRef.current) {
@@ -19,12 +19,24 @@ export default function Venue() {
 
   return (
     <div className="min-h-screen w-screen p-6 bg-white shadow-[inset_0_0_10px_rgba(0,0,0,0.1)] flex flex-col items-center">
-      <h1 className="font-garamond text-gray-600 font-bold text-2xl py-4 text-center">
+      <h1 className="font-extrabold font-dancing text-gray-600  text-5xl py-4 text-center">
         Venue
-        <br/>
-        <span className='text-xs font-sans font-light'>Swipe left to view the map</span>
-        <br/>
-        
+        <br />
+        <motion.span
+          className="text-xs font-sans font-light"
+          initial={{ opacity: 0, y: 5 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{
+            repeat: Infinity,
+            repeatType: 'reverse',
+            duration: 1.5,
+            ease: 'easeInOut',
+          }}
+        >
+          Swipe left to view the map
+        </motion.span>
+        <br />
+
       </h1>
 
       {/* Church Card */}
@@ -69,11 +81,11 @@ export default function Venue() {
           <p className="text-sm text-gray-600">
             4231 Caleruega Road, Nasugbu, Batangas, Philippines
           </p>
-          
+
         </div>
       </div>
 
-      <p className="text-sm text-center px-2 font-light py-6"> The design of the church and its surrounding areas evoke a sense of serenity and oneness with nature, <br/>in keeping with the church’s goal of bringing its pilgrims close to nature and closer to God. </p>
+      <p className="text-sm text-center px-2 font-light py-6"> The design of the church and its surrounding areas evoke a sense of serenity and oneness with nature, <br />in keeping with the church’s goal of bringing its pilgrims close to nature and closer to God. </p>
 
       {/* Reception Card */}
       <div className="max-w-md w-full bg-white border shadow-md rounded-lg overflow-hidden">
@@ -81,9 +93,9 @@ export default function Venue() {
           {/* Image Slide */}
           <SwiperSlide>
             <img
-              src="/recep.jpg"
+              src="/jardin.jfif"
               alt="Reception Venue"
-              className="w-full h-64 object-cover"
+              className="w-full h-64 object-cover pt-2"
             />
           </SwiperSlide>
           {/* Map Slide */}

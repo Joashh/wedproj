@@ -46,8 +46,8 @@ export default function Timer() {
                         <div className="w-24 border-b-2 border-white my-4"></div>
                         
                     </div>
-                    <motion.h1
-                        className="text-4xl md:text-5xl font-parisienne text-center text-white mb-2 border-y-1 p-2 font-extrabold"
+                    <motion.h1 
+                        className="text-5xl md:text-6xl md:font-medium font-style text-center text-white mb-2 border-y-1 p-2 font-extrabold"
                         initial={{ y: 30, opacity: 0 }}
                         animate={{ y: 0, opacity: 1 }}
                         transition={{ duration: 1 }}
@@ -67,26 +67,26 @@ export default function Timer() {
 
                 <div className="flex justify-center items-center bg-white/10 backdrop-blur-xs rounded-2xl px-4 py-2 shadow-md text-white text-sm font-bold gap-2 ">
                     <div className="flex flex-col items-center">
-                        <span className="md:text-xl md:font-normal">{timeLeft.days.toString().padStart(2, "0")}</span>
-                        <span className="text-xs md:text-xl">Days</span>
+                        <span className="md:text-base ">{timeLeft.days.toString().padStart(2, "0")}</span>
+                        <span className="text-xs md:text-base">Days</span>
                     </div>
                     <span className="mx-1">:</span>
 
                     <div className="flex flex-col items-center">
-                        <span className="md:text-xl md:font-normal">{timeLeft.hours.toString().padStart(2, "0")}</span>
-                        <span className="text-xs md:text-xl">Hours</span>
+                        <span className="md:text-base ">{timeLeft.hours.toString().padStart(2, "0")}</span>
+                        <span className="text-xs md:text-base">Hours</span>
                     </div>
                     <span className="mx-1">:</span>
 
                     <div className="flex flex-col items-center">
-                        <span className="md:text-xl md:font-normal">{timeLeft.minutes.toString().padStart(2, "0")}</span>
-                        <span className="text-xs md:text-xl">Minutes</span>
+                        <span className="md:text-base ">{timeLeft.minutes.toString().padStart(2, "0")}</span>
+                        <span className="text-xs md:text-base">Minutes</span>
                     </div>
                     <span className="mx-1">:</span>
 
                     <div className="flex flex-col items-center">
-                        <span className="md:text-xl md:font-normal">{timeLeft.seconds.toString().padStart(2, "0")}</span>
-                        <span className="text-xs md:text-xl">Seconds</span>
+                        <span className="md:text-base ">{timeLeft.seconds.toString().padStart(2, "0")}</span>
+                        <span className="text-xs md:text-base">Seconds</span>
                     </div>
                 </div>
 
