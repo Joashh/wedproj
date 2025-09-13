@@ -72,7 +72,7 @@ export default function Story() {
       <Music/>
     </div>
 
-      <div className="flex justify-center max-w-screen gap-4 p-4">
+      <div className="flex justify-center max-w-screen gap-4 p-4 overflow-x-hidden">
         <motion.img
           src="a4.jpeg"
           alt=""
