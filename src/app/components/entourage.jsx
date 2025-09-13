@@ -1,6 +1,6 @@
 export default function Entourage() {
   return (
-    <div className="w-screen min-h-screen bg-white p-6 flex flex-col items-center">
+    <div className="w-screen min-h-screen p-6 flex flex-col items-center">
       <h1 className="font-garamond text-2xl font-bold text-gray-700 mb-6 text-center">
         Wedding Entourage
       </h1>

@@ -46,26 +46,32 @@ export default function Main() {
           />
         </div>
       </div>
-
+          
       {/* Down Arrow */}
-      <div className="flex items-center flex-col flex-1 justify-center pt-15">
-       
-        <div
-          className="p-2 bg-white/40 backdrop-blur-xs border rounded-full animate-bounce shadow-md cursor-pointer"
-          onClick={scrollToStory} // music plays here too
-        >
-          <svg
-            className="w-6 h-6 text-black"
-            fill="none"
-            stroke="currentColor"
-            strokeWidth={2}
-            viewBox="0 0 24 24"
-            xmlns="http://www.w3.org/2000/svg"
-          >
-            <path strokeLinecap="round" strokeLinejoin="round" d="M19 9l-7 7-7-7" />
-          </svg>
-        </div>
-      </div>
+      
+   <div className="flex items-center flex-col flex-1 justify-center pt-15 space-y-3">
+  {/* Title */}
+ 
+ <span className="text-gray-600 font-light text-lg pt-10 md:py-10 font-libre"> You are cordially invited</span>
+  {/* Arrow Button */}
+  <div
+    className="flex items-center justify-center p-3 bg-white/40 backdrop-blur-xs border rounded-full animate-bounce shadow-md cursor-pointer"
+    onClick={scrollToStory} // music plays here too
+  >
+    <svg
+      className="w-6 h-6 text-black"
+      fill="none"
+      stroke="currentColor"
+      strokeWidth={2}
+      viewBox="0 0 24 24"
+      xmlns="http://www.w3.org/2000/svg"
+    >
+      <path strokeLinecap="round" strokeLinejoin="round" d="M19 9l-7 7-7-7" />
+    </svg>
+  </div>
+</div>
+
+
 
       <h1 className="py-10 font-bold text-xl absolute bottom-0 hide-on-short">
         . . .

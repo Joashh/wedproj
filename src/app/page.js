@@ -11,7 +11,7 @@ import WedDetails from "./components/weddetails";
 
 export default function Home() {
   return (
-    <div className="w-full  bg-repeat bg-center   bg-[url('/dasies.png')]">
+    <div className="w-full  bg-repeat bg-center   bg-[url('/pattern3.png')]">
         <Main/>
         <Story/>
         <Photos/>

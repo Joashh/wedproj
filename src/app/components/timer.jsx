@@ -47,7 +47,7 @@ export default function Timer() {
                         
                     </div>
                     <motion.h1
-                        className="text-xl md:text-4xl font-playfair text-center text-white mb-2 border-y-1 p-2 font-extrabold"
+                        className="text-4xl md:text-5xl font-parisienne text-center text-white mb-2 border-y-1 p-2 font-extrabold"
                         initial={{ y: 30, opacity: 0 }}
                         animate={{ y: 0, opacity: 1 }}
                         transition={{ duration: 1 }}

@@ -2,7 +2,7 @@ import InvitationSlider from "./InvitationSlider";
 
 export default function Invitation() {
   return (
-    <section className="py-10 bg-white">
+    <section className="py-10 ">
       <div className="max-w-2xl mx-auto text-center px-4">
         {/* Heading */}
         <h2 className="text-3xl font-garamond font-semibold text-gray-700 mb-3">
