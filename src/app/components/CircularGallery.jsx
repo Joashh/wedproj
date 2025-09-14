@@ -477,7 +477,7 @@ export default function CircularGallery({
     ref={containerRef}
     className="
       w-full h-full     
-      sm:w-[200px] sm:h-[200px] 
+      sm:w-full sm:h-full 
       md:w-full md:h-full      
       overflow-hidden 
       cursor-grab active:cursor-grabbing
