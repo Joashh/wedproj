@@ -5,21 +5,21 @@ export default function RSVP() {
   const [name, setName] = useState("");
   const [going, setGoing] = useState("");
   const [message, setMessage] = useState("");
+  const [contact, setContact] = useState(""); // new state for contact
   const [submitted, setSubmitted] = useState(false);
 
   const handleSubmit = async (e) => {
     e.preventDefault();
 
-    // Prevent multiple submissions
     if (submitted) return;
 
     await fetch(
-      "https://script.google.com/macros/s/AKfycbwFTf4iRRelm5TdiM8IuAmJywjfpNceY_KCCM-XKcyCqTW8pW0PJ2Q1ybB-a30t5_BlZw/exec",
+      "https://script.google.com/macros/s/AKfycbyKiv5Rix0bZITEF_Ww7Ma_49AFL2H2RkBV4TvdGS1_yAh3B2-3MMQRk_CdOZwv9I1ubw/exec",
       {
         method: "POST",
         mode: "no-cors",
         headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ name, going, message }),
+        body: JSON.stringify({ name, going, message, contact }), // send contact too
       }
     );
 
@@ -27,31 +27,46 @@ export default function RSVP() {
     setName("");
     setGoing("");
     setMessage("");
+    setContact(""); // reset contact
   };
 
   return (
     <div className="w-full md:max-w-md mx-auto p-6 bg-white rounded-xl">
-      {/* Title */}
-      <h2 className="text-2xl font-semibold text-center mb-2">RSVP</h2>
+      <h2 className="text-2xl font-semibold text-center mb-2">Répondez s’il vous plaît (RSVP)</h2>
       <p className="text-blue-900 text-center text-xs sm:text-sm mb-4">
-        Please arrive at the venue 1 hour before the ceremony. <br /> Thank you!
+        Please arrive at the venue 1 hour before the ceremony.
+        <br/><br/>
+        <span className="text-xs">
+          We have limited our invites to the closest to us considering
+          the venues' limited capacity.
+          Please refer to your RSVP card sent separately for number of seats allotted for you.
+          Unless otherwise stated, this invite is for 1 seat only.
+        </span>
       </p>
 
-      {/* Success Message */}
       {submitted && (
         <p className="text-green-600 text-center mb-4">
           Thank you for your response!
         </p>
       )}
 
-      {/* Form */}
       <form onSubmit={handleSubmit} className="space-y-4">
         <input
           type="text"
           placeholder="Your Name"
-          className="w-full p-3 border rounded-lg focus:ring-2 focus:ring-blue-400 focus:outline-none transition"
+          className="w-full p-3 text-gray-600 border rounded-lg focus:ring-2 focus:ring-blue-400 focus:outline-none transition"
           value={name}
           onChange={(e) => setName(e.target.value)}
+          required
+          disabled={submitted}
+        />
+
+        <input
+          type="text"
+          placeholder="Your Contact (Phone)"
+          className="w-full p-3 text-gray-600 border rounded-lg focus:ring-2 focus:ring-blue-400 focus:outline-none transition"
+          value={contact}
+          onChange={(e) => setContact(e.target.value)}
           required
           disabled={submitted}
         />
@@ -63,14 +78,14 @@ export default function RSVP() {
           required
           disabled={submitted}
         >
-          <option value="">Going?</option>
+          <option value="">Can you attend?</option>
           <option value="Yes">Yes</option>
           <option value="No">No</option>
         </select>
 
         <textarea
-          placeholder="Message (optional)"
-          className="w-full p-3 border rounded-lg focus:ring-2 focus:ring-blue-400 focus:outline-none transition resize-none"
+          placeholder="Message"
+          className="w-full p-3 border text-gray-600 rounded-lg focus:ring-2 focus:ring-blue-400 focus:outline-none transition resize-none"
           value={message}
           onChange={(e) => setMessage(e.target.value)}
           rows={4}
@@ -79,7 +94,7 @@ export default function RSVP() {
 
         <button
           type="submit"
-          className={`w-full p-3 text-white rounded-lg font-semibold transition ${
+          className={`w-full p-3 text-white rounded-lg font-semibold transition cursor-pointer ${
             submitted ? "bg-gray-400 cursor-not-allowed" : "bg-blue-600 hover:bg-blue-700"
           }`}
           disabled={submitted}

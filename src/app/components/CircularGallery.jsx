@@ -333,21 +333,21 @@ class App {
   }
   createMedias(items, bend = 1, textColor, borderRadius, font) {
     const defaultItems = [
-      { image: `/11.jfif`, text: 'La Union' },
-      { image: `/12.jfif`, text: 'La Union' },
-      { image: `/13.jfif`, text: 'Hongkong' },
-      { image: `/14.jfif`, text: 'Azure' },
-      { image: `/15.jfif`, text: 'Macao' },
-      { image: `/16.jfif`, text: 'Hongkong' },
-      { image: `/17.jfif`, text: 'Macao' },
-      { image: `/18.jfif`, text: 'Hongkong' },
-      { image: `/19.jfif`, text: 'Benguet' },
-      { image: `/20.jfif`, text: 'Baguio' },
-      { image: `/21.jfif`, text: 'Cebu' },
-      { image: `/22.jfif`, text: 'Laguna' },
-      { image: `/23.jfif`, text: 'Boracay' },
-      { image: `/24.jfif`, text: 'Laguna' },
-      { image: `/25.jfif`, text: 'Laguna' },
+      { image: `/11.jfif`, text: '' },
+      { image: `/12.jfif`, text: '' },
+      { image: `/13.jfif`, text: '' },
+      { image: `/14.jfif`, text: '' },
+      { image: `/15.jfif`, text: '' },
+      { image: `/16.jfif`, text: '' },
+      { image: `/17.jfif`, text: '' },
+      { image: `/18.jfif`, text: '' },
+      { image: `/19.jfif`, text: '' },
+      { image: `/20.jfif`, text: '' },
+      { image: `/21.jfif`, text: '' },
+      { image: `/22.jfif`, text: '' },
+      { image: `/23.jfif`, text: '' },
+      { image: `/24.jfif`, text: '' },
+      { image: `/25.jfif`, text: '' },
     ];
     const galleryItems = items && items.length ? items : defaultItems;
     this.mediasImages = galleryItems.concat(galleryItems);
@@ -473,5 +473,5 @@ export default function CircularGallery({
       app.destroy();
     };
   }, [items, bend, textColor, borderRadius, font, scrollSpeed, scrollEase]);
-  return <div className="w-full  h-[400px] md:h-full overflow-hidden cursor-grab active:cursor-grabbing" ref={containerRef} />;
+  return <div className="w-full  h-100px md:h-full overflow-hidden cursor-grab active:cursor-grabbing" ref={containerRef} />;
 }

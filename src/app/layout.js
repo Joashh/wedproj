@@ -64,8 +64,8 @@ const lato = Lato({
 });
 
 export const metadata = {
-  title: "Wedding Website",
-  description: "Julius & Maria Wedding Page",
+  title: "Pat and Cha Wedding",
+  description: "Patrixia and Charlo is inviting you!",
 };
 
 export default function RootLayout({ children }) {

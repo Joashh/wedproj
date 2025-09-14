@@ -3,6 +3,7 @@ import { Swiper, SwiperSlide } from 'swiper/react';
 import 'swiper/css';
 import { useRef } from 'react';
 import { motion } from "framer-motion";
+import SplitText from './SplitText';
 export default function Venue() {
   const enableMap = (iframeRef, buttonRef) => {
     if (iframeRef.current && buttonRef.current) {
@@ -10,6 +11,11 @@ export default function Venue() {
       buttonRef.current.style.display = 'none';
     }
   };
+
+  const handleAnimationComplete = () => {
+  console.log("All letters have animated!");
+};
+
 
   const churchIframe = useRef(null);
   const churchBtn = useRef(null);
@@ -19,7 +25,22 @@ export default function Venue() {
 
   return (
     <div className="min-h-screen w-screen p-6 bg-white shadow-[inset_0_0_10px_rgba(0,0,0,0.1)] flex flex-col items-center">
-      <h1 className="font-extrabold font-dancing text-gray-600  text-5xl py-4 text-center">
+      
+       <SplitText
+        text="Wedding Details"
+        className="text-gray-800 dark:text-gray-100 text-4xl sm:text-5xl md:text-6xl mb-12 font-extrabold font-dancing text-center"
+        delay={100}
+        duration={0.6}
+        ease="power3.out"
+        splitType="chars"
+        from={{ opacity: 0, y: 40 }}
+        to={{ opacity: 1, y: 0 }}
+        threshold={0.1}
+        rootMargin="-100px"
+        textAlign="center"
+        onLetterAnimationComplete={handleAnimationComplete}
+      />
+      <h1 className="  text-gray-600 font-lato text-3xl py-4 text-center">
         Venue
         <br />
         <motion.span

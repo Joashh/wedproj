@@ -8,9 +8,6 @@ import AnimatedCircles from "./AnimatedCircle";
 
 gsap.registerPlugin(ScrollTrigger);
 
-const handleAnimationComplete = () => {
-  console.log("All letters have animated!");
-};
 
 export default function WedDetails() {
   const sectionsRef = useRef([]);
@@ -69,20 +66,7 @@ export default function WedDetails() {
   return (
     <section className="w-full min-h-screen px-4 py-16 flex flex-col items-center relative overflow-x-hidden">
       {/* Title */}
-      <SplitText
-        text="Wedding Details"
-        className="text-gray-800 dark:text-gray-100 text-4xl sm:text-5xl md:text-6xl mb-12 font-extrabold font-dancing text-center"
-        delay={100}
-        duration={0.6}
-        ease="power3.out"
-        splitType="chars"
-        from={{ opacity: 0, y: 40 }}
-        to={{ opacity: 1, y: 0 }}
-        threshold={0.1}
-        rootMargin="-100px"
-        textAlign="center"
-        onLetterAnimationComplete={handleAnimationComplete}
-      />
+     
 
       {/* Sections */}
       <div className="w-full max-w-4xl flex flex-col gap-3">

@@ -52,7 +52,7 @@ export default function Timer() {
                         animate={{ y: 0, opacity: 1 }}
                         transition={{ duration: 1 }}
                     >
-                        Patrixia and Charlo
+                        Patrixia & Charlo
                     </motion.h1>
 
 

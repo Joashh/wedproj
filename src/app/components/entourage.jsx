@@ -12,7 +12,7 @@ export default function Entourage() {
             Parents of the Groom
           </h2>
           <p className="text-gray-700">Mr. Nelson Isaac</p>
-          <p className="text-gray-700">Mrs. Lesley Isaac</p>
+          <p className="text-gray-700">Mrs. Lesly Isaac</p>
         </div>
 
         <div className="text-center space-y-1">
@@ -46,7 +46,7 @@ export default function Entourage() {
               "Mr. Rolando Manzanilla",
               "Mrs. Chona Palacpac",
               "Mr. Marlon Mercado",
-              "Mrs. Liezel Solinap",
+              "Mrs. Liezel Sulinap",
             ].map((sponsor, i) => (
               <p key={i} className="text-gray-700 text-sm md:text-base">{sponsor}</p>
             ))}
