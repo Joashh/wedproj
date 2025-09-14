@@ -4,12 +4,18 @@ import { useEffect } from 'react';
 export default function ScrollToTop({ children }) {
   useEffect(() => {
     if ('scrollRestoration' in window.history) {
-      // Disable browser auto-restoring scroll
       window.history.scrollRestoration = 'manual';
     }
 
-    // Always scroll to top on first render
+    // Initial scroll reset
     window.scrollTo(0, 0);
+
+    // Safety scroll reset after hydration
+    const timeout = setTimeout(() => {
+      window.scrollTo(0, 0);
+    }, 50);
+
+    return () => clearTimeout(timeout);
   }, []);
 
   return <>{children}</>;
