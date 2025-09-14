@@ -53,7 +53,7 @@ export default function Photos() {
 
       
          <div  className='flex justify-center ' style={{ fontFamily: "sans-serif", textAlign: "center" }}>
-        <Banner images={images} speed={20000} />
+        <Banner images={images} speed={40000} />
       </div>
      
      
