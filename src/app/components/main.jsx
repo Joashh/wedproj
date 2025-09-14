@@ -2,26 +2,19 @@
 import { useRef, useEffect } from "react";
 import Timer from "./timer";
 import Music from "./music";
+import * as React from "react";
 
 
 
 export default function Main() {
   const musicRef = useRef(null);
 
-  const unlockScroll = () => {
+ const scrollToStory = () => {
+    // 🔓 Unlock scroll
     document.body.style.overflow = "auto";
     document.documentElement.style.overflow = "auto";
-  };
 
-  const lockScroll = () => {
-    document.body.style.overflow = "hidden";
-    document.documentElement.style.overflow = "hidden";
-  };
-
-  const scrollToStory = () => {
-    unlockScroll();
-
-    // Smooth scroll
+    // Smooth scroll to Story section
     const storySection = document.getElementById("story");
     if (storySection) {
       storySection.scrollIntoView({ behavior: "smooth" });
@@ -31,17 +24,35 @@ export default function Main() {
     musicRef.current?.play();
   };
 
-  useEffect(() => {
-    if (window.scrollY <= 10) {
-      // Only lock scroll if at very top
-      lockScroll();
-    } else {
-      // Already scrolled somewhere (reload mid-page)
-      unlockScroll();
-    }
+      useEffect(() => {
+    document.body.style.overflow = "hidden";
+    document.documentElement.style.overflow = "hidden";
 
-    return () => unlockScroll(); // cleanup
+    return () => {
+      // clean up if Main unmounts
+      document.body.style.overflow = "auto";
+      document.documentElement.style.overflow = "auto";
+    };
   }, []);
+
+    const timeoutRef = React.useRef();
+
+  const clearTimer = React.useCallback(
+    () => clearTimeout(timeoutRef.current),
+    []
+  );
+
+  React.useEffect(() => {
+    if (timeoutRef.current) clearTimer();
+
+    timeoutRef.current = setTimeout(() => {
+      window.scrollTo(0, 0);
+    }, 1000);
+
+    return () => {
+      clearTimer();
+    };
+  }, [clearTimer]);
 
   return (
     <div className="max-w-screen h-screen flex flex-col justify-center items-center relative">
