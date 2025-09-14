@@ -8,12 +8,20 @@ import Music from "./music";
 export default function Main() {
   const musicRef = useRef(null);
 
- const scrollToStory = () => {
-    // 🔓 Unlock scroll
+  const unlockScroll = () => {
     document.body.style.overflow = "auto";
     document.documentElement.style.overflow = "auto";
+  };
 
-    // Smooth scroll to Story section
+  const lockScroll = () => {
+    document.body.style.overflow = "hidden";
+    document.documentElement.style.overflow = "hidden";
+  };
+
+  const scrollToStory = () => {
+    unlockScroll();
+
+    // Smooth scroll
     const storySection = document.getElementById("story");
     if (storySection) {
       storySection.scrollIntoView({ behavior: "smooth" });
@@ -23,15 +31,16 @@ export default function Main() {
     musicRef.current?.play();
   };
 
-      useEffect(() => {
-    document.body.style.overflow = "hidden";
-    document.documentElement.style.overflow = "hidden";
+  useEffect(() => {
+    if (window.scrollY <= 10) {
+      // Only lock scroll if at very top
+      lockScroll();
+    } else {
+      // Already scrolled somewhere (reload mid-page)
+      unlockScroll();
+    }
 
-    return () => {
-      // clean up if Main unmounts
-      document.body.style.overflow = "auto";
-      document.documentElement.style.overflow = "auto";
-    };
+    return () => unlockScroll(); // cleanup
   }, []);
 
   return (
