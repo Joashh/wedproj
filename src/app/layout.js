@@ -1,3 +1,4 @@
+import ScrollToTop from "./components/scrolltotop";
 import { Geist, Geist_Mono, Lato, Playfair_Display,Libre_Baskerville  } from "next/font/google";
 import { Great_Vibes, Dancing_Script, Parisienne, Montserrat, EB_Garamond, Style_Script} from "next/font/google";
 import "./globals.css";
@@ -68,13 +69,17 @@ export const metadata = {
   description: "Patrixia and Charlo is inviting you!",
 };
 
+
+
 export default function RootLayout({ children }) {
   return (
     <html lang="en">
       <body
         className={`${styleScript.variable} ${geistSans.variable}  ${geistMono.variable} ${montserrat.variable} ${playfair.variable} ${greatVibes.variable} ${dancing.variable} ${parisienne.variable} ${lato.variable} ${libreBaskerville.variable} antialiased`}
       >
-        {children}
+         <ScrollToTop>
+          {children}
+        </ScrollToTop>
       </body>
     </html>
   );

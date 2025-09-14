@@ -67,7 +67,7 @@ export default function Entourage() {
             <h2 className="text-lg font-garamond font-semibold text-gray-600">
               Matron of Honor
             </h2>
-            <p className="text-gray-700 text-sm  md:text-base">Ann Gelyn Raymundo</p>
+            <p className="text-gray-700 text-sm  md:text-base">Anne Gelyn Raymundo</p>
           </div>
 
         </div>

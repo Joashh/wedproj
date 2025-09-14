@@ -5,13 +5,16 @@ export default function RSVP() {
   const [name, setName] = useState("");
   const [going, setGoing] = useState("");
   const [message, setMessage] = useState("");
-  const [contact, setContact] = useState(""); // new state for contact
+  const [contact, setContact] = useState("");
   const [submitted, setSubmitted] = useState(false);
+  const [disabled, setDisabled] = useState(false); // for 3s lock
 
   const handleSubmit = async (e) => {
     e.preventDefault();
 
-    if (submitted) return;
+    if (submitted || disabled) return;
+
+    setDisabled(true); // lock immediately
 
     await fetch(
       "https://script.google.com/macros/s/AKfycbyKiv5Rix0bZITEF_Ww7Ma_49AFL2H2RkBV4TvdGS1_yAh3B2-3MMQRk_CdOZwv9I1ubw/exec",
@@ -19,7 +22,7 @@ export default function RSVP() {
         method: "POST",
         mode: "no-cors",
         headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ name, going, message, contact }), // send contact too
+        body: JSON.stringify({ name, going, message, contact }),
       }
     );
 
@@ -27,21 +30,33 @@ export default function RSVP() {
     setName("");
     setGoing("");
     setMessage("");
-    setContact(""); // reset contact
+    setContact("");
+
+    // re-enable after 3s (if you want multiple submissions later)
+    setTimeout(() => setDisabled(false), 3000);
   };
 
   return (
     <div className="w-full md:max-w-md mx-auto p-6 bg-white rounded-xl">
-      <h2 className="text-2xl font-semibold text-center mb-2 flex flex-col"> <span >RSVP</span> <span className="text-sm">Répondez s’il vous plaît</span></h2>
-      <p className="text-blue-900 text-center text-xs sm:text-sm mb-4">
+      <h2 className="text-2xl font-semibold text-center mb-2 flex flex-col">
+        <span>RSVP</span>
+        <span className="text-sm">Répondez s’il vous plaît</span>
+      </h2>
+
+      <p className="text-blue-900 text-center text-xs sm:text-sm mb-4 flex flex-col">
         Please arrive at the venue 1 hour before the ceremony.
         <br/><br/>
         <span className="text-xs">
           We have limited our invites to the closest to us considering
-          the venues' limited capacity.
-          Please refer to your RSVP card sent separately for number of seats allotted for you.
-          Unless otherwise stated, this invite is for 1 seat only.
+          the venues' limited capacity. Please refer to your RSVP card
+          sent separately for number of seats allotted for you.
+
+          
         </span>
+      <span className="text-xs py-2"> 
+        Kindly register per person.
+      </span>
+        
       </p>
 
       {submitted && (
@@ -94,12 +109,16 @@ export default function RSVP() {
 
         <button
           type="submit"
-          className={`w-full p-3 text-white rounded-lg font-semibold transition cursor-pointer ${
-            submitted ? "bg-gray-400 cursor-not-allowed" : "bg-blue-600 hover:bg-blue-700"
+          className={`w-full p-3 text-white rounded-lg font-semibold transition ${
+            submitted
+              ? "bg-gray-400 cursor-not-allowed"
+              : disabled
+              ? "bg-blue-400 cursor-wait"
+              : "bg-blue-600 hover:bg-blue-700"
           }`}
-          disabled={submitted}
+          disabled={submitted || disabled}
         >
-          {submitted ? "Submitted" : "Submit"}
+          {submitted ? "Submitted" : disabled ? "Please wait..." : "Submit"}
         </button>
       </form>
     </div>
