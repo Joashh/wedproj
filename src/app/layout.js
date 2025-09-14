@@ -72,11 +72,14 @@ export const metadata = {
 
 
 export default function RootLayout({ children }) {
+  
   return (
+    
     <html lang="en">
       <body
         className={`${styleScript.variable} ${geistSans.variable}  ${geistMono.variable} ${montserrat.variable} ${playfair.variable} ${greatVibes.variable} ${dancing.variable} ${parisienne.variable} ${lato.variable} ${libreBaskerville.variable} antialiased`}
       >
+        
           {children}
         
       </body>

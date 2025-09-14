@@ -1,45 +1,25 @@
 'use client';
-import { useRef, useEffect, useState } from "react";
+import { useRef, useEffect, useCallback } from "react";
 import Timer from "./timer";
 import Music from "./music";
 
 
 
-export default function Main() {
+export default function Facade ( {setIsExpanded} ) {
   const musicRef = useRef(null);
-   const [scrollLocked, setScrollLocked] = useState(true); // lock initially only at top
+  
 
-   const scrollToStory = () => {
+ const scrollToStory = () => {
+  
+    // Smooth scroll to Story section
     const storySection = document.getElementById("story");
     if (storySection) {
       storySection.scrollIntoView({ behavior: "smooth" });
     }
+    setIsExpanded = true;
+    // 🎵 Start music
     musicRef.current?.play();
-    setScrollLocked(false); // unlock scrolling after arrow click
   };
-
-  useEffect(() => {
-    const handleScroll = (e) => {
-      if (scrollLocked && window.scrollY === 0) {
-        // prevent scrolling only if locked AND at top
-        e.preventDefault();
-        window.scrollTo(0, 0);
-      }
-    };
-
-    const options = { passive: false }; // allow preventDefault
-    window.addEventListener("wheel", handleScroll, options);
-    window.addEventListener("touchmove", handleScroll, options);
-
-    return () => {
-      window.removeEventListener("wheel", handleScroll, options);
-      window.removeEventListener("touchmove", handleScroll, options);
-    };
-  }, [scrollLocked]);
-
-   
-
-  
 
   return (
     <div className="max-w-screen h-screen flex flex-col justify-center items-center relative">
