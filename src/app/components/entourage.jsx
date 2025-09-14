@@ -1,7 +1,7 @@
 export default function Entourage() {
   return (
     <div className="w-screen min-h-screen p-6 flex flex-col items-center">
-      <h1 className="font-dancing  text-4xl font-bold text-gray-700 mb-6 text-center">
+      <h1 className="font-garamond  text-3xl font-bold text-gray-700 mb-6 text-center">
         Wedding Entourage
       </h1>
 
@@ -54,55 +54,61 @@ export default function Entourage() {
         </div>
 
         {/* Best Man & Matron */}
-        <div className="text-center space-y-1">
-          <h2 className="text-lg font-garamond font-semibold text-gray-600">
-            Best Man
-          </h2>
-          <p className="text-gray-700">Jerome Lloyd Dizon</p>
+        <div className="text-center space-y-1 grid grid-cols-2">
 
-          <h2 className="text-lg font-garamond font-semibold text-gray-600">
-            Matron of Honor
-          </h2>
-          <p className="text-gray-700">Ann Gelyn Raymundo</p>
+          <div>
+            <h2 className="text-lg font-garamond font-semibold text-gray-600">
+              Best Man
+            </h2>
+            <p className="text-gray-700 text-sm  md:text-base">Jerome Lloyd Dizon</p>
+          </div>
+
+          <div>
+            <h2 className="text-lg font-garamond font-semibold text-gray-600">
+              Matron of Honor
+            </h2>
+            <p className="text-gray-700 text-sm  md:text-base">Ann Gelyn Raymundo</p>
+          </div>
+
         </div>
 
         <div className="grid grid-cols-2  gap-y-1 text-center py-2">
-           <div className="text-center">
-          <h2 className="text-lg font-garamond font-semibold text-gray-600 mb-2">
-            Groomsmen
-          </h2>
-          <div className="space-y-1">
-            {[
-              "Julius Asher Austria",
-              "Jon Christopher Matienzo",
-              "Rey Benedict Magpantay",
-              "Christian Panotes",
-              "Marjean Samonte",
-            ].map((groom, i) => (
-              <p key={i} className="text-gray-700 text-sm md:text-base">{groom}</p>
-            ))}
+          <div className="text-center">
+            <h2 className="text-lg font-garamond font-semibold text-gray-600 mb-2">
+              Groomsmen
+            </h2>
+            <div className="space-y-1">
+              {[
+                "Julius Asher Austria",
+                "Jon Christopher Matienzo",
+                "Rey Benedict Magpantay",
+                "Christian Panotes",
+                "Marjean Samonte",
+              ].map((groom, i) => (
+                <p key={i} className="text-gray-700 text-sm md:text-base">{groom}</p>
+              ))}
+            </div>
+          </div>
+
+          {/* Bridesmaids */}
+          <div className="text-center">
+            <h2 className="text-lg font-garamond font-semibold text-gray-600 mb-2">
+              Bridesmaids
+            </h2>
+            <div className="space-y-1">
+              {[
+                "Juliana Marie Pareja",
+                "Nichols Joyce Bautista",
+                "Ciara Mary Ann Calpo",
+                "Sen Austria",
+                "Jessuine Marie Austria",
+              ].map((bride, i) => (
+                <p key={i} className="text-gray-700 text-sm md:text-base">{bride}</p>
+              ))}
+            </div>
           </div>
         </div>
 
-        {/* Bridesmaids */}
-        <div className="text-center">
-          <h2 className="text-lg font-garamond font-semibold text-gray-600 mb-2">
-            Bridesmaids
-          </h2>
-          <div className="space-y-1">
-            {[
-              "Juliana Marie Pareja",
-              "Nichols Joyce Bautista",
-              "Ciara Mary Ann Calpo",
-              "Sen Austria",
-              "Jessuine Marie Austria",
-            ].map((bride, i) => (
-              <p key={i} className="text-gray-700 text-sm md:text-base">{bride}</p>
-            ))}
-          </div>
-        </div>
-        </div>
-       
 
         {/* Secondary Sponsors */}
         <div>

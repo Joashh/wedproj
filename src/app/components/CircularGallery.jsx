@@ -473,5 +473,14 @@ export default function CircularGallery({
       app.destroy();
     };
   }, [items, bend, textColor, borderRadius, font, scrollSpeed, scrollEase]);
-  return <div className="w-full  h-100px md:h-full overflow-hidden cursor-grab active:cursor-grabbing" ref={containerRef} />;
+  return <div
+    ref={containerRef}
+    className="
+      w-full h-full     
+      sm:w-[200px] sm:h-[200px] 
+      md:w-full md:h-full      
+      overflow-hidden 
+      cursor-grab active:cursor-grabbing
+    "
+  />;
 }

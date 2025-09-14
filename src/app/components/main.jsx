@@ -1,23 +1,44 @@
 'use client';
-import { useRef } from "react";
+import { useRef, useEffect } from "react";
 import Timer from "./timer";
 import Music from "./music";
+
+
 
 export default function Main() {
   const musicRef = useRef(null);
 
-  const scrollToStory = () => {
-    const storySection = document.getElementById('story');
+ const scrollToStory = () => {
+    // 🔓 Unlock scroll
+    document.body.style.overflow = "auto";
+    document.documentElement.style.overflow = "auto";
+
+    // Smooth scroll to Story section
+    const storySection = document.getElementById("story");
     if (storySection) {
-      storySection.scrollIntoView({ behavior: 'smooth' });
+      storySection.scrollIntoView({ behavior: "smooth" });
     }
-    // Play music when arrow is clicked
+
+    // 🎵 Start music
     musicRef.current?.play();
   };
+
+      useEffect(() => {
+    document.body.style.overflow = "hidden";
+    document.documentElement.style.overflow = "hidden";
+
+    return () => {
+      // clean up if Main unmounts
+      document.body.style.overflow = "auto";
+      document.documentElement.style.overflow = "auto";
+    };
+  }, []);
 
   return (
     <div className="max-w-screen h-screen flex flex-col justify-center items-center relative">
       <Music ref={musicRef} />
+
+      
 
       {/* Circle Section */}
       <div className="w-full relative flex flex-col items-center " >

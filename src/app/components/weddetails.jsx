@@ -46,6 +46,10 @@ export default function WedDetails() {
       contentComponent: <DressCode />,
     },
     {
+      title: "For Guests",
+      content: "Kindly refer to our color palette."
+    },
+    {
       title: "Unplugged Ceremony",
       content:
         "Welcome to our unplugged ceremony. We invite you to be fully present with us. Kindly turn off your phone and cameras during the ceremony and enjoy this special day with us.",
@@ -90,7 +94,7 @@ export default function WedDetails() {
                 </p>
 
                 {/* Animated circles only for Attire & Color */}
-                {sec.title === "Attire & Color" && (
+                {sec.title === "For Guests" && (
                   <div className="flex justify-center sm:justify-start ">
                     <AnimatedCircles />
                   </div>

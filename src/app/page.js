@@ -11,7 +11,7 @@ import WedDetails from "./components/weddetails";
 
 export default function Home() {
   return (
-    <div className="max-w-screen overflow-x-hidden bg-repeat bg-center   bg-[url('/pattern3.png')]">
+    <div className="max-w-screen overflow-x-hidden bg-repeat bg-center   bg-[url('/50pattern.png')]">
         <Main/>
         <Story/>
         <Photos/>

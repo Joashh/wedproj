@@ -6,7 +6,7 @@ import "swiper/css/navigation"; // navigation styles
 import "swiper/css/pagination"; // pagination styles
 
 export default function InvitationSlider() {
-  const invitations = ["/1.jfif", "/2.jfif", "/3.jfif"];
+  const invitations = ["/1.jfif", "/3.jfif", "/2.jfif"];
 
   return (
     <div className="max-w-md mx-auto">

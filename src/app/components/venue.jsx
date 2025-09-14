@@ -28,7 +28,7 @@ export default function Venue() {
       
        <SplitText
         text="Wedding Details"
-        className="text-gray-800 dark:text-gray-100 text-4xl sm:text-5xl md:text-6xl mb-12 font-extrabold font-dancing text-center"
+        className="text-gray-700 dark:text-gray-100 text-4xl sm:text-5xl md:text-6xl mb-12 font-extrabold font-dancing text-center"
         delay={100}
         duration={0.6}
         ease="power3.out"
@@ -40,7 +40,7 @@ export default function Venue() {
         textAlign="center"
         onLetterAnimationComplete={handleAnimationComplete}
       />
-      <h1 className="  text-gray-600 font-lato text-3xl py-4 text-center">
+      <h1 className="  text-gray-600 font-garamond font-bold text-3xl py-4 text-center">
         Venue
         <br />
         <motion.span
@@ -54,7 +54,7 @@ export default function Venue() {
             ease: 'easeInOut',
           }}
         >
-          Swipe left to view the map
+          Swipe left the images to view the map
         </motion.span>
         <br />
 

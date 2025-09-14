@@ -32,7 +32,7 @@ export default function RSVP() {
 
   return (
     <div className="w-full md:max-w-md mx-auto p-6 bg-white rounded-xl">
-      <h2 className="text-2xl font-semibold text-center mb-2">Répondez s’il vous plaît (RSVP)</h2>
+      <h2 className="text-2xl font-semibold text-center mb-2 flex flex-col"> <span >RSVP</span> <span className="text-sm">Répondez s’il vous plaît</span></h2>
       <p className="text-blue-900 text-center text-xs sm:text-sm mb-4">
         Please arrive at the venue 1 hour before the ceremony.
         <br/><br/>
