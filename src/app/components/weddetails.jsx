@@ -68,7 +68,7 @@ export default function WedDetails() {
       title: "Snap & Share",
       content:
         "Help us capture the love and laughter! Use our hashtag:",
-      hashtag: "#NewCHApterWithPat",
+      hashtag: "#NewCHApterWithPAT",
     },
    
   ];
