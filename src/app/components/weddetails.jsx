@@ -49,6 +49,11 @@ export default function WedDetails() {
       title: "For Guests",
       content: "Kindly refer to our color palette."
     },
+     {
+      title: "Gift Guide",
+      content:
+        "Your presence at our wedding is the greatest gift of all. Should you wish to honor us with a gift, a contribution to our future together would be deeply appreciated.",
+    },
     {
       title: "Unplugged Ceremony",
       content:
@@ -65,6 +70,7 @@ export default function WedDetails() {
         "Help us capture the love and laughter! Use our hashtag:",
       hashtag: "#NewCHApterWithPat",
     },
+   
   ];
 
   return (

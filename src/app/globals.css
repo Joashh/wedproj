@@ -185,3 +185,8 @@ body {
     display: none !important;
   }
 }
+@media (min-width: 769px) and (max-height: 820px) {
+  .hide-on-short_2 {
+    display: none !important;
+  }
+}

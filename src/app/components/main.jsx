@@ -99,7 +99,7 @@ export default function Main() {
 
 
 
-      <h1 className="py-10 font-bold text-xl absolute bottom-0 hide-on-short">
+      <h1 className="py-10 font-bold text-xl absolute bottom-0 hide-on-short hide-on-short_2">
         . . .
       </h1>
     </div>
